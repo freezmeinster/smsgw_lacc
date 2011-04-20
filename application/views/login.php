@@ -36,6 +36,7 @@ $(document).pngFix( );
 	
 	<!--  start login-inner -->
 	<div id="login-inner">
+	    <form action="<?php echo site_url(); ?>core/dashboard" method="POST">
 		<table border="0" cellpadding="0" cellspacing="0">
 		<tr>
 			<th>Username</th>
@@ -51,9 +52,10 @@ $(document).pngFix( );
 		</tr>
 		<tr>
 			<th></th>
-			<td><input type="button" class="submit-login"  /></td>
+			<td><input type="submit" class="submit-login"  /></td>
 		</tr>
 		</table>
+	    </form>
 	</div>
  	<!--  end login-inner -->
 	<div class="clear"></div>
