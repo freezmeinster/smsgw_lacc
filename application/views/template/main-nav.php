@@ -5,13 +5,13 @@
 		<div class="nav">
 		<div class="table">
 		
-		<ul class="select <?php if($now == 'core'){ echo "current" ;}?>"><li><a href="<?php echo site_url("core/dashboard"); ?>"><b>Dashboard</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select <?php if($now == 'core'){ echo "current" ;}?>"><li><a href="<?php echo site_url("core/dashboard"); ?>"><b><?php get_line('core_main_nav');?></b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub <?php if($now != ''){ echo "show" ;}?>">
 			<ul class="sub">
-				<li><a href="#nogo">Catatan Sms</a></li>
-				<li><a href="#nogo">Catatan Group</a></li>
-				<li><a href="#nogo">Catatan Kriteria</a></li>
+				<li><a href="#nogo"><?php get_line('core_sms_record_nav');?></a></li>
+				<li><a href="#nogo"><?php get_line('core_group_record_nav');?></a></li>
+				<li><a href="#nogo"><?php get_line('core_criteria_record_nav');?></a></li>
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -20,11 +20,10 @@
 		
 		<div class="nav-divider">&nbsp;</div>
 		                    
-		<ul class="select <?php if($now == 'kontak'){ echo "current" ;}?>"><li><a href="<?php echo site_url("kontak/"); ?>"><b>Kontak</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select <?php if($now == 'kontak'){ echo "current" ;}?>"><li><a href="<?php echo site_url("kontak/"); ?>"><b><?php get_line('contact_main_nav');?></b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub <?php if($now2 != ''){ echo "show" ;}?>">
 			<ul class="sub">
-				<li><a href="#nogo">Lihat Semua Sms</a></li>
 				<li><a href="#nogo">Template Sms</a></li>
 			</ul>
 		</div>
@@ -34,12 +33,11 @@
 		
 		<div class="nav-divider">&nbsp;</div>
 		                    
-		<ul class="select <?php if($now == 'sms'){ echo "current" ;}?>"><li><a href="<?php echo site_url("sms/"); ?>"><b>Sms</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select <?php if($now == 'sms'){ echo "current" ;}?>"><li><a href="<?php echo site_url("sms/"); ?>"><b><?php get_line('sms_main_nav');?></b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub <?php if($now2 != ''){ echo "show" ;}?>">
 			<ul class="sub">
-				<li><a href="#nogo">Lihat Semua Sms</a></li>
-				<li><a href="#nogo">Template Sms</a></li>
+				<li><a href="<?php echo site_url("sms/template"); ?>"><?php get_line('sms_template_nav');?></a></li>
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -48,7 +46,7 @@
 		
 		<div class="nav-divider">&nbsp;</div>
 		
-		<ul class="select <?php if($now == 'group'){ echo "current" ;}?>"><li><a href="<?php echo site_url("group/"); ?>"><b>Group</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select <?php if($now == 'group'){ echo "current" ;}?>"><li><a href="<?php echo site_url("group/"); ?>"><b><?php get_line('group_main_nav');?></b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub <?php if($now2 != ''){ echo "show" ;}?>">
 			<ul class="sub">
@@ -63,7 +61,7 @@
 		
 		<div class="nav-divider">&nbsp;</div>
 		
-		<ul class="select <?php if($now == 'kriteria'){ echo "current" ;}?>"><li><a href="<?php echo site_url("kriteria"); ?>"><b>Kriteria</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select <?php if($now == 'kriteria'){ echo "current" ;}?>"><li><a href="<?php echo site_url("kriteria"); ?>"><b><?php get_line('criteria_main_nav');?></b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub <?php if($now2 != ''){ echo "show" ;}?>">
 			<ul class="sub">

@@ -2,6 +2,12 @@
 
 class Core extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		
+	}
+
 	public function index()
 	{
 		$this->load->view('login');
@@ -9,7 +15,7 @@ class Core extends CI_Controller {
 	
 	public function dashboard()
 	{
-		$this->load->view('dashboard');
+		$this->load->view('core/dashboard');
 	}
 
 }
