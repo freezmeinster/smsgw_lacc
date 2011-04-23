@@ -3,20 +3,14 @@
 	var $kriteria = '';
 	var $status = '';
 	
-	function __construct()
-	{
+	function __construct(){
 	    parent::__construct();
 	}
+
 	
-	function all()
-	{
+	function all(){
 	    $query = $this->db->get('kriteria');
 	    return $query->result();
-	}
-	
-	function get($id=NULL,$kriteria=NULL)
-	{
-	    echo $id;
 	}
 	
 	function save(){

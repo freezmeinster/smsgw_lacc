@@ -13,5 +13,7 @@
     $lang['core_criteria_record_nav'] = "Catatan Kriteria";
     
     $lang['sms_template_nav'] = "Template Sms";
+    
+    $lang['criteria_add'] = 'Tambah Kriteria';
     /*Second Navigation Stop*/
 ?>
