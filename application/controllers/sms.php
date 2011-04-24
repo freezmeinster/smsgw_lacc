@@ -6,7 +6,8 @@ class Sms extends CI_Controller {
 		parent::__construct();
 		$this->lang->load('sms','indonesia');
 	}
-
+	
+	/*Get URl Start */
 	public function index()
 	{
 		$this->load->view('sms/sms');
@@ -18,6 +19,10 @@ class Sms extends CI_Controller {
 		$this->load->view("sms/template");
 	}
 	
+	/*Get URL stop*/
+	
+	/*POST URL Start*/
+	
 	function new_template()
 	{
 	    $pesan = $this->input->post('pesan');
@@ -26,7 +31,9 @@ class Sms extends CI_Controller {
 	    $temp->id_kriteria = $id_kriteria;
 	    $temp->pesan = $pesan;
 	    $temp->save();
-	    echo $pesan;
+	    redirect('sms/template');
 	}
+	
+	/*POST URL Stop*/
 
 }

@@ -74,27 +74,36 @@
 					<th class="table-header-repeat line-left minwidth-1"><a href=""><?php get_line('sms_criteria');?></a></th>
 					<th class="table-header-options line-left"><a href="">Options</a></th>
 				</tr>
-				<tr>
-					<td><input type="checkbox"/></td>
-					<td>sfsf</td>
-					<td>assssssssss</td>
-					<td class="options-width">
-					<a href="" title="Edit" class="icon-1 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-2 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
-					</td>
-				</tr>
-				<tr class="alternate-row">
-					<td><input  type="checkbox"/></td>
-					<td>Sabev</td>
-					<td>asasss</td>
-					<td class="options-width">
-					<a href="" title="Edit" class="icon-1 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-2 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
-					</td>
-				</tr>
-				
+				<?php
+				    $q = $this->sms_template->all();
+				    $i = 1;
+				    $edit_label = get_line_item('edit');
+				    $delete_label = get_line_item('delete');
+				    
+				    foreach($q as $row ){
+				    $id_template = $row->id_template;
+				    $kriteria = $row->nama_kriteria;
+				    $pesan = $row->pesan;
+				    $edit_url = site_url("sms_template/edit/$id");
+				    $delete_url = site_url("sms_template/delete/$id");
+				    
+				    if (bcmod($i,'2') == 1){
+					$r = 'class="alternate-row"';
+				    }else $r = '';
+				    
+				    echo "<tr $r>\n";
+				    echo "<td><input type='checkbox'/></td>\n";
+				    echo "<td>$pesan</td>\n";
+				    echo "<td>$kriteria</td>\n";
+				    echo "<td class='option-width'>\n";
+				    echo "<a href=\"$edit_url\" title=\"$edit_label\" class='icon-1 info-tooltip'></a>\n";
+				    echo "<a href=\"$delete_url\" title=\"$delete_label\" class='icon-2 info-tooltip'></a>\n";
+				    echo "</td>\n";
+				    echo "</tr>\n";
+				    
+				    }
+				    
+				?>
 				</table>
 				<!--  end product-table................................... --> 
 				</form>

@@ -9,7 +9,10 @@ class Sms_template extends CI_Model {
 	}
 	
 	function all(){
-	    $q = $this->db->get('sms_template');
+	    $this->db->select('*');
+	    $this->db->from('sms_template');
+	    $this->db->join('kriteria','kriteria.id_kriteria = sms_template.id_kriteria');
+	    $q = $this->db->get();
 	    return $q->result();
 	}
 	

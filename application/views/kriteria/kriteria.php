@@ -40,6 +40,8 @@
 				<?php
 				    $kriteria = $this->kriterias->all();
 				    $i = 1;
+				    $edit_label = get_line_item('edit');
+				    $delete_label = get_line_item('delete');
 				   
 				    foreach($kriteria as $row ){
 					$nama = $row->nama_kriteria;
@@ -60,8 +62,8 @@
 					echo "<td>$nama</td>\n";
 					echo "<td>$stat</td>\n";
 					echo "<td class='options-width'>\n";
-					echo "<a href='$edit_url' title='Edit' class='icon-1 info-tooltip'\n></a>";
-					echo "<a href='$delete_url' title='Delete' class='icon-2 info-tooltip'\n></a>";
+					echo "<a href='$edit_url' title=\"$edit_label\" class='icon-1 info-tooltip'\n></a>";
+					echo "<a href='$delete_url' title=\"$delete_label\" class='icon-2 info-tooltip'\n></a>";
 					echo "</td>\n";
 					echo "</tr>\n";
 					$i++;
