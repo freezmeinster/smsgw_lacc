@@ -69,7 +69,7 @@ $config['url_suffix'] = '.js';
 | than english.
 |
 */
-$config['language']	= 'indonesia';
+$config['language']	= 'english';
 
 /*
 |--------------------------------------------------------------------------

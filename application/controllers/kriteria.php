@@ -4,7 +4,7 @@ class Kriteria extends CI_Controller {
 
 	public function __construct(){
 	    parent::__construct();
-	    $this->lang->load('criteria');
+	    $this->lang->load('criteria','indonesia');
 	}
 	
 	/* Get URL Start */
@@ -15,11 +15,27 @@ class Kriteria extends CI_Controller {
 	
 	public function add()
 	{
-	    $this->load->view('kriteria/kriteria');
+	    $this->load->view('kriteria/add');
+	}
+	
+	public function delete($id)
+	{
+	    $k = New Kriterias;
+	    $k->delete($id);
+	    redirect('kriteria');
 	}
 	/* Get URL Stop */
 	
-	/* POST URL Start */
 	
+	
+	/* POST URL Start */
+	public function add_post()
+	{
+	    $nama_kriteria = $this->input->post('nama_kriteria');
+	    $kriteria = New Kriterias;
+	    $kriteria->kriteria = $nama_kriteria;
+	    $kriteria->save();
+	    redirect('kriteria');
+	}
 	/* POST URL Stop */
 }

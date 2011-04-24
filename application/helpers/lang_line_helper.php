@@ -4,7 +4,7 @@
 	function get_line($line){
 	    $CI =& get_instance();
 	    
-	    $CI->lang->load('nav');
+	    $CI->lang->load('nav','indonesia');
 	    
 	    echo $CI->lang->line($line);
 	}
