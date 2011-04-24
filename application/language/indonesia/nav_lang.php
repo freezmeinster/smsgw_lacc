@@ -13,7 +13,11 @@
     $lang['core_criteria_record_nav'] = "Catatan Kriteria";
     
     $lang['sms_template_nav'] = "Template Sms";
+    $lang['sms_inbox'] = "Kotak Masuk";
+    $lang['sms_outbox'] = "Kotak Keluar";
     
     $lang['criteria_add'] = 'Tambah Kriteria';
+    
+    $lang['contact_add'] = 'Tambah Kontak';
     /*Second Navigation Stop*/
 ?>

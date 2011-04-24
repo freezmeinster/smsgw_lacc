@@ -24,7 +24,7 @@
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
-				<li><a href="#nogo">Template Sms</a></li>
+				<li><a href="<?php echo site_url('kontak/add');?>"><?php get_line('contact_add');?></a></li>
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -38,6 +38,8 @@
 		<div class="select_sub show">
 			<ul class="sub">
 				<li><a href="<?php echo site_url("sms/template"); ?>"><?php get_line('sms_template_nav');?></a></li>
+				<li><a href="<?php echo site_url("sms/inbox"); ?>"><?php get_line('sms_inbox');?></a></li>
+				<li><a href="<?php echo site_url("sms/outbox"); ?>"><?php get_line('sms_outbox');?></a></li>
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->

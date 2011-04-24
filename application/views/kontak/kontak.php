@@ -40,38 +40,39 @@
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Nama</a>	</th>
 					<th class="table-header-repeat line-left minwidth-1"><a href="">No Telp</a></th>
 					<th class="table-header-repeat line-left"><a href="">Alamat</a></th>
-					<th class="table-header-repeat line-left"><a href="">Group</a></th>
 					<th class="table-header-options line-left"><a href="">Options</a></th>
 				</tr>
-				<tr>
-					<td><input  type="checkbox"/></td>
-					<td></td>
-					<td>George</td>
-					<td><a href="">george@mainevent.co.za</a></td>
-					<td><a href="">www.mainevent.co.za</a></td>
-					<td class="options-width">
-					<a href="" title="Edit" class="icon-1 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-2 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-3 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
-					</td>
-				</tr>
-				<tr class="alternate-row">
-					<td><input  type="checkbox"/></td>
-					<td>Sabev</td>
-					<td>George</td>
-					<td><a href="">george@mainevent.co.za</a></td>
-					<td><a href="">www.mainevent.co.za</a></td>
-					<td class="options-width">
-					<a href="" title="Edit" class="icon-1 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-2 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-3 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
-					</td>
-				</tr>
+				<?php
+				    $kriteria = $this->kontaks->all();
+				    $i = 1;
+				    $edit_label = get_line_item('edit');
+				    $delete_label = get_line_item('delete');
+				   
+				    foreach($kriteria as $row ){
+					$nama = $row->nama;
+					$id = $row->id_kontak;
+					$tlp = $row->no_telp;
+					$alamat = $row->alamat;
+					$edit_url = site_url("kontak/edit/$id");
+					$delete_url = site_url("kontak/delete/$id");
+					if (bcmod($i,'2') == 1){
+					    $r = 'class="alternate-row"';
+					}else $r = '';
+					
+					echo "<tr $r>\n";
+					echo "<td><input type='checkbox'\></td>\n";
+					echo "<td>$nama</td>\n";
+					echo "<td>$tlp</td>\n";
+					echo "<td>$alamat</td>\n";
+					echo "<td class='options-width'>\n";
+					echo "<a href='$edit_url' title=\"$edit_label\" class='icon-1 info-tooltip'\n></a>";
+					echo "<a href='$delete_url' title=\"$delete_label\" class='icon-2 info-tooltip'\n></a>";
+					echo "</td>\n";
+					echo "</tr>\n";
+					$i++;
+				    }
 				
+				?>
 				</table>
 				<!--  end product-table................................... --> 
 				</form>
