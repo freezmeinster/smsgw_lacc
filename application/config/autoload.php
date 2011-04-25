@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('kriterias','sms_template','kontaks');
+$autoload['model'] = array('kriterias','sms_template','kontaks','groups');
 
 
 /* End of file autoload.php */

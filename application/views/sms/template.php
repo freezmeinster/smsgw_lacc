@@ -38,7 +38,7 @@
 					<td>	
 					    <select  class="styledselect_form_1" name="id_kriteria">
 						<?php
-						    $q = $this->kriterias->all();
+						    $q = $this->kriterias->all_status(1);
 						    foreach($q as $row){
 							$id = $row->id_kriteria;
 							$nama = $row->nama_kriteria;

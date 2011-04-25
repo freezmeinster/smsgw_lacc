@@ -52,9 +52,7 @@
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
-				<li><a href="#nogo">Categories Details 1</a></li>
-				<li><a href="#nogo">Categories Details 2</a></li>
-				<li><a href="#nogo">Categories Details 3</a></li>
+				<li><a href="<?php echo site_url('group/group_add');?>"><?php get_line('group_add');?></a></li>
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->

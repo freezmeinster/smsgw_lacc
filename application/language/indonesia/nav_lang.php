@@ -12,12 +12,18 @@
     $lang['core_group_record_nav'] = "Catatan Group";
     $lang['core_criteria_record_nav'] = "Catatan Kriteria";
     
+    
+    $lang['contact_add'] = 'Tambah Kontak';
+    
+    
     $lang['sms_template_nav'] = "Template Sms";
     $lang['sms_inbox'] = "Kotak Masuk";
     $lang['sms_outbox'] = "Kotak Keluar";
     
+    $lang['group_add'] = "Tambah Grup";
+    
     $lang['criteria_add'] = 'Tambah Kriteria';
     
-    $lang['contact_add'] = 'Tambah Kontak';
+   
     /*Second Navigation Stop*/
 ?>

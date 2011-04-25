@@ -12,6 +12,7 @@ class Sms_template extends CI_Model {
 	    $this->db->select('*');
 	    $this->db->from('sms_template');
 	    $this->db->join('kriteria','kriteria.id_kriteria = sms_template.id_kriteria');
+	    $this->db->where('kriteria.status',1);
 	    $q = $this->db->get();
 	    return $q->result();
 	}
