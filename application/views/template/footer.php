@@ -42,8 +42,8 @@
             <li>
                 <a class="expanded heading"><?php get_line('group_main_nav');?></a>
                  <ul class="navigation">
-                    <li><a href="#" title=""><?php get_line('group_list');?></a></li>
-                    <li><a href="#" title=""><?php get_line('group_add');?></a></li>
+                    <li><a href="<?php echo site_url('group');?>" title=""><?php get_line('group_list');?></a></li>
+                    <li><a href="<?php echo site_url('group/add');?>" title=""><?php get_line('group_add');?></a></li>
                 </ul>
             </li>
             <li>

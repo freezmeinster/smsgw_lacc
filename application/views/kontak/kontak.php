@@ -30,7 +30,7 @@
 					$edit_url = site_url("kontak/edit/$id");
 					$delete_url = site_url("kontak/delete/$id");
 					if (bcmod($i,'2') == 1){
-					    $r = 'class="alternate-row"';
+					    $r = 'alt"';
 					}else $r = '';
 					
 					echo "<tr $r>\n";
@@ -61,6 +61,4 @@
                 <div style="clear: both;"></div>
          </div>
     </div>
-</div>
-</div>
 <?php $this->load->view("template/footer");?>

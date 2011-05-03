@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>LAECC SMS GATEWAY</title>
+<title>LAECC SMS Gateway</title>
+<link rel="shortcut icon" href="<?php echo base_url();?>/asset/img/favicon.png" type="image/x-icon" />
 <link href="<?php echo base_url();?>/asset/styles/layout.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url();?>/asset/styles/wysiwyg.css" rel="stylesheet" type="text/css" />
 <!-- Theme Start -->

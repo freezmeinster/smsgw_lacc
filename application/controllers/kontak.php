@@ -26,6 +26,7 @@ class Kontak extends CI_Controller {
 		$k = New Kontaks;
 		$k->nama = $this->input->post('nama');
 		$k->no_telp = $this->input->post('no_telp');
+		$k->alamat = $this->input->post('alamat');
 		$k->save();
 		redirect('kontak');
 	}

@@ -13,7 +13,7 @@ class Group extends CI_Controller {
 		$this->load->view('group/group');
 	}
 	
-	public function group_add()
+	public function add()
 	{
 		$this->load->view('group/add');
 	}
