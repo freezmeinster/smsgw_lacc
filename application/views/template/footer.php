@@ -49,8 +49,8 @@
             <li>
                <a class="expanded heading"><?php get_line('criteria_main_nav');?></a>
                  <ul class="navigation">
-                    <li><a href="#" title=""><?php get_line('criteria_list');?></a></li>
-                    <li><a href="#" title=""><?php get_line('criteria_add');?></a></li>
+                    <li><a href="<?php echo site_url('kriteria');?>" title=""><?php get_line('criteria_list');?></a></li>
+                    <li><a href="<?php echo site_url('kriteria/add');?>" title=""><?php get_line('criteria_add');?></a></li>
                 </ul>
             </li>
         </ul>

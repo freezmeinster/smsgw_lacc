@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/project/sms_gw';
+$config['base_url']	= 'http://192.168.70.250/smsgw';
 
 /*
 |--------------------------------------------------------------------------

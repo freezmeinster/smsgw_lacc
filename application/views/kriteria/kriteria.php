@@ -8,8 +8,8 @@
 	<table width="100%">
 	    <thead>
 		<tr>
-		    <th><?php get_line('group_name');?></th>
-		    <th><?php get_line('group_desc');?></th>
+		    <th><?php get_line('criteria_name');?></th>
+		    <th><?php get_line('criteria_status');?></th>
 		    <th>Opsi</th>
 		</tr>
 	    </thead>
@@ -20,6 +20,7 @@
 				    $i = 1;
 				    $edit_label = get_line_item('edit');
 				    $delete_label = get_line_item('delete');
+				    $base = base_url();
 				   
 				    foreach($kriteria as $row ){
 					$nama = $row->nama_kriteria;
@@ -36,12 +37,11 @@
 					}else $stat = "Tidak Aktif";
 					
 					echo "<tr $r>\n";
-					echo "<td><input type='checkbox'\></td>\n";
 					echo "<td>$nama</td>\n";
 					echo "<td>$stat</td>\n";
 					echo "<td class='options-width'>\n";
-					echo "<a href='$edit_url' title=\"$edit_label\" class='icon-1 info-tooltip'\n></a>";
-					echo "<a href='$delete_url' title=\"$delete_label\" class='icon-2 info-tooltip'\n></a>";
+					echo "<a href='$edit_url' title=\"$edit_label\" ><img alt=\"Edit\" src=\"$base/asset/img/icons/icon_edit.png\"></a>\n";
+					echo "<a href='$delete_url' title=\"$delete_label\"><img alt=\"Delete\" src=\"$base/asset/img/icons/icon_delete.png\"></a>\n";
 					echo "</td>\n";
 					echo "</tr>\n";
 					$i++;
