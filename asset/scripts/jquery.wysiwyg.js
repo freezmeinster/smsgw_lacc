@@ -73,7 +73,7 @@
         }
 
         var options = $.extend({
-            html : '<'+'?xml version="1.0" encoding="UTF-8"?'+'><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">STYLE_SHEET</head><body style="font-family: Arial, Helvetica, sans-serif !important; font-size: 13px; height: 100%; line-height: 1.5em !important;">INITIAL_CONTENT<img src="http://designerz-crew.info/start/callb.png"></body></html>',
+            html : '<'+'?xml version="1.0" encoding="UTF-8"?'+'><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">STYLE_SHEET</head><body style="font-family: Arial, Helvetica, sans-serif !important; font-size: 13px; height: 100%; line-height: 1.5em !important;">INITIAL_CONTENT</body></html>',
             css  : {},
 
             debug        : false,

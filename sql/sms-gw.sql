@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.8.1
+-- version 3.3.10
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 03, 2011 at 01:17 AM
--- Server version: 5.1.46
--- PHP Version: 5.2.13
+-- Generation Time: May 16, 2011 at 05:07 AM
+-- Server version: 5.1.56
+-- PHP Version: 5.3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -30,15 +30,14 @@ CREATE TABLE IF NOT EXISTS `group` (
   `nama_group` varchar(30) NOT NULL,
   `keterangan` varchar(100) NOT NULL,
   PRIMARY KEY (`id_group`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `group`
 --
 
 INSERT INTO `group` (`id_group`, `nama_group`, `keterangan`) VALUES
-(5, 'Pagi A', 'Group ini masuk pagi jam 08:00 sampai 09:00'),
-(6, 'Pagi B', 'Group pegawai ini masuk Pukul 09:00 - 10:00');
+(5, 'Pagi AAS', 'Group ini masuk pagi jam 08:00 sampai 09:00');
 
 -- --------------------------------------------------------
 
@@ -101,10 +100,10 @@ CREATE TABLE IF NOT EXISTS `kriteria` (
 --
 
 INSERT INTO `kriteria` (`id_kriteria`, `nama_kriteria`, `status`, `tgl_buat`) VALUES
-(1, 'Invasi', 1, '2011-04-24 00:57:51'),
+(1, 'Invasi', 0, '2011-04-24 00:57:51'),
 (2, 'Undangan', 1, '2011-04-24 09:01:33'),
-(5, 'Informasi', 1, '2011-04-24 10:03:41'),
-(6, 'Tagihan', 1, '2011-04-25 20:48:45');
+(5, 'Informasi', 0, '2011-04-24 10:03:41'),
+(6, 'Tagihan', 0, '2011-04-25 20:48:45');
 
 -- --------------------------------------------------------
 
@@ -175,17 +174,14 @@ CREATE TABLE IF NOT EXISTS `sms_template` (
   PRIMARY KEY (`id_template`),
   KEY `id_user` (`id_user`),
   KEY `id_kriteria` (`id_kriteria`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `sms_template`
 --
 
 INSERT INTO `sms_template` (`id_template`, `id_kriteria`, `pesan`, `tgl_buat`, `id_user`) VALUES
-(1, 1, 'asdfasdf', '2011-04-24 02:05:00', NULL),
-(2, 2, 'aseas', '2011-04-24 09:04:56', NULL),
-(3, 5, 'rrrrrerertetertertert', '2011-04-24 10:03:54', NULL),
-(4, 2, 'Bagi semua yang mesana ganteng harap datang ', '2011-04-24 21:29:30', NULL);
+(5, 2, 'asdfasdfaqdfasdf', '2011-05-16 00:02:41', 1);
 
 -- --------------------------------------------------------
 

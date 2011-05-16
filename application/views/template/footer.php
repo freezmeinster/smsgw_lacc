@@ -9,7 +9,7 @@
         <!-- Left Dark Bar Start -->
     <div id="leftside">
     	<div class="user">
-        	<img SRC="img/avatar.png" width="44" height="44" class="hoverimg" alt="Avatar" />
+        	<img SRC="<?php echo base_url();?>/img/avatar.png" width="44" height="44" class="hoverimg" alt="Avatar" />
             <p>Logged in as:</p>
             <p class="username">Bersyukur</p>
             <p class="userbtn"><a href="#" title="">Profile</a></p>
@@ -25,10 +25,17 @@
         <li>
         	<a class="expanded heading"><?php get_line('sms_main_nav');?></a>
                 <ul class="navigation">
-                    
-                    <li><a href="#" title=""><?php get_line('sms_template_nav');?></a></li>
                     <li><a href="#" title=""><?php get_line('sms_inbox');?></a></li>
                      <li><a href="#" title=""><?php get_line('sms_outbox');?></a></li>
+                </ul>
+            </li>
+
+               <li>
+        	<a class="expanded heading"><?php get_line('sms_template_nav');?></a>
+                <ul class="navigation">
+                    
+                    <li><a href="<?php echo site_url('sms/template');?>" title=""><?php get_line('sms_template_nav');?></a></li>
+		    <li><a href="<?php echo site_url('sms/template_add');?>" title=""><?php get_line('sms_template_add');?></a></li>
                 </ul>
             </li>
         	<li>

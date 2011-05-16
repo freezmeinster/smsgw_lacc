@@ -10,6 +10,15 @@
 		return $q->result();
 	}
 	
+	function get($id){
+	    $q = $this->db->get_where('group',array('id_group' => $id));
+	    $data = $q->result();
+	    $this->id_group = $data[0]->id_group;
+	    $this->nama_group = $data[0]->nama_group;
+	    $this->keterangan = $data[0]->keterangan;
+	    return $this;
+	}
+	
 	function save()
 	{
 	    $data = array(
@@ -22,6 +31,16 @@
 	function delete($id)
 	{
 	    $this->db->delete('group',array('id_group' => $id));
+	}
+	
+	function update()
+	{
+	    $data = array(
+		'nama_group' => $this->nama_group,
+		'keterangan' => $this->keterangan
+	    );
+	    $this->db->where('id_group',$this->id_group);
+	    $this->db->update('group',$data);
 	}
     }
 ?>

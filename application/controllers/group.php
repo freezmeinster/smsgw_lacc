@@ -24,6 +24,12 @@ class Group extends CI_Controller {
 		redirect('group');
 	}
 	
+	public function edit($id)
+	{
+		$data['id_group'] = $id;
+		$this->load->view('group/edit',$data);
+	}
+	
 	public function group_add_post()
 	{
 		$nama_group = $this->input->post('nama_group');
@@ -32,6 +38,18 @@ class Group extends CI_Controller {
 		$group->nama_group = $nama_group;
 		$group->keterangan = $keterangan;
 		$group->save();
+		redirect('group');
+	}
+	
+	public function group_edit_post($id)
+	{
+		$nama_group = $this->input->post('nama_group');
+		$keterangan = $this->input->post('keterangan');
+		$group = New Groups;
+		$group->id_group = $id;
+		$group->nama_group = $nama_group;
+		$group->keterangan = $keterangan;
+		$group->update();
 		redirect('group');
 	}
 }
