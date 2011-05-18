@@ -12,6 +12,21 @@ class Sms extends CI_Controller {
 	{
 		$this->load->view('sms/sms');
 	}
+        
+        public function outbox()
+        {
+                $this->load->view("sms/outbox");
+        }
+
+        public function inbox()
+        {
+                $this->load->view("sms/outbox");
+        }
+
+        public function new_sms()
+        {
+                $this->load->view('sms/sms_new');
+        }
 	
 	public function template()
 	{
@@ -19,6 +34,15 @@ class Sms extends CI_Controller {
 		$this->load->view("sms/template");
 	}
 	
+	public function template_add()
+	{
+                $this->load->view("sms/template_add");
+	}
+
+        public function template_edit()
+        {
+                $this->load->view("sms/template_edit");
+        }
 	/*Get URL stop*/
 	
 	/*POST URL Start*/
@@ -34,6 +58,14 @@ class Sms extends CI_Controller {
 	    redirect('sms/template');
 	}
 	
+        function sms_test(){
+            $no_telp = $this->input->post('no_telp');
+            $pesan = $this->input->post('pesan');
+            $id_kontak = $this->input->post('id_kontak');
+            $id_kriteria = $this->input->post('id_kriteria');
+            $this->gammu->send_one_sms($id_kontak,$no_telp,$pesan,$id_kriteria);
+            redirect('sms/new_sms');
+        }
 	/*POST URL Stop*/
 
 }

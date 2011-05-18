@@ -9,7 +9,7 @@
         <!-- Left Dark Bar Start -->
     <div id="leftside">
     	<div class="user">
-        	<img SRC="<?php echo base_url();?>/img/avatar.png" width="44" height="44" class="hoverimg" alt="Avatar" />
+        	<img SRC="<?php echo base_url();?>/asset/img/avatar.png" width="44" height="44" class="hoverimg" alt="Avatar" />
             <p>Logged in as:</p>
             <p class="username">Bersyukur</p>
             <p class="userbtn"><a href="#" title="">Profile</a></p>
@@ -17,29 +17,30 @@
         </div>
         <div class="notifications">
         	<p class="notifycount"><a href="" title="" class="notifypop">2</a></p>
-            <p><a href="" title="" class="notifypop">Pemberitahuan Baru</a></p>
-            <p class="smltxt">(Klik Untuk membuka Pemberitahuan)</p>
+            <p><a href="" title="" class="notifypop"><?php get_line('sms_notif');?></a></p>
+            <p class="smltxt"><?php get_line('sms_notif_click');?></p>
         </div>
         
         <ul id="nav">
         <li>
         	<a class="expanded heading"><?php get_line('sms_main_nav');?></a>
                 <ul class="navigation">
-                    <li><a href="#" title=""><?php get_line('sms_inbox');?></a></li>
-                     <li><a href="#" title=""><?php get_line('sms_outbox');?></a></li>
+                     <li><a href="<?php echo site_url('sms/inbox');?>" title=""><?php get_line('sms_inbox');?></a></li>
+                     <li><a href="<?php echo site_url('sms/outbox');?>" title=""><?php get_line('sms_outbox');?></a></li>
+                     <li><a href="<?php echo site_url('sms/new_sms');?>" title=""><?php get_line('sms_new');?></a></li>
+                     <li><a href="#" title=""><?php get_line('sms_group');?></a></li>
                 </ul>
             </li>
 
                <li>
-        	<a class="expanded heading"><?php get_line('sms_template_nav');?></a>
+        	<a class="<?php if ($this->uri->segment(1) == 'sms'){ echo "expanded"; }else echo "collapsed";?> heading"><?php get_line('sms_template_nav');?></a>
                 <ul class="navigation">
-                    
                     <li><a href="<?php echo site_url('sms/template');?>" title=""><?php get_line('sms_template_nav');?></a></li>
 		    <li><a href="<?php echo site_url('sms/template_add');?>" title=""><?php get_line('sms_template_add');?></a></li>
                 </ul>
             </li>
         	<li>
-        	<a class="expanded heading"><?php get_line('contact_main_nav');?></a>
+                <a class="<?php if ($this->uri->segment(1) == 'kontak'){ echo "expanded"; }else echo "collapsed";?> heading"><?php get_line('contact_main_nav');?></a>
                 <ul class="navigation">
                     
                     <li><a href="<?php echo site_url('kontak');?>" title=""><?php get_line('contact_list');?></a></li>
@@ -47,14 +48,14 @@
                 </ul>
             </li>
             <li>
-                <a class="expanded heading"><?php get_line('group_main_nav');?></a>
+                 <a class="<?php if ($this->uri->segment(1) == 'group'){ echo "expanded"; }else echo "collapsed";?> heading"><?php get_line('group_main_nav');?></a>
                  <ul class="navigation">
                     <li><a href="<?php echo site_url('group');?>" title=""><?php get_line('group_list');?></a></li>
                     <li><a href="<?php echo site_url('group/add');?>" title=""><?php get_line('group_add');?></a></li>
                 </ul>
             </li>
             <li>
-               <a class="expanded heading"><?php get_line('criteria_main_nav');?></a>
+                 <a class="<?php if ($this->uri->segment(1) == 'kriteria'){ echo "expanded"; }else echo "collapsed";?> heading"><?php get_line('criteria_main_nav');?></a>
                  <ul class="navigation">
                     <li><a href="<?php echo site_url('kriteria');?>" title=""><?php get_line('criteria_list');?></a></li>
                     <li><a href="<?php echo site_url('kriteria/add');?>" title=""><?php get_line('criteria_add');?></a></li>
@@ -77,14 +78,7 @@
         <p class="loadmore"><a href="#" title="">Load more notifications</a></p>
     </div>
     <!-- Notifications Box/Pop-Up End --> 
-    
-    <script type="text/javascript" SRC="<?php echo base_url();?>/asset/scripts/enhance.js"></script>	
-    <script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/excanvas.js"></script>
-	<script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/jquery.min.js"></script>
-    <script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/jquery-ui.min.js"></script>
-	<script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/jquery.wysiwyg.js"></script>
-    <script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/visualize.jQuery.js"></script>
-    <script type="text/javascript" SRC="<?php echo base_url();?>/asset/scripts/functions.js"></script>
+
     
     <!--[if IE 6]>
     <script type='text/javascript' src='scripts/png_fix.js'></script>

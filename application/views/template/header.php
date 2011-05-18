@@ -3,8 +3,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>LAECC SMS Gateway</title>
+
+    
+<script type="text/javascript" SRC="<?php echo base_url();?>/asset/scripts/enhance.js"></script>    
+<script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/excanvas.js"></script>
+<script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/jquery.min.js"></script>
+<script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/jquery-ui.min.js"></script>
+<script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/jquery.wysiwyg.js"></script>
+<script type='text/javascript' SRC="<?php echo base_url();?>/asset/scripts/visualize.jQuery.js"></script>
+<script type="text/javascript" SRC="<?php echo base_url();?>/asset/scripts/functions.js"></script>
+
 <link rel="shortcut icon" href="<?php echo base_url();?>/asset/img/favicon.png" type="image/x-icon" />
 <link href="<?php echo base_url();?>/asset/styles/layout.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url();?>/asset/jquery-ui.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url();?>/asset/styles/wysiwyg.css" rel="stylesheet" type="text/css" />
 <!-- Theme Start -->
 <link href="<?php echo base_url();?>/asset/themes/blue/styles.css" rel="stylesheet" type="text/css" />

@@ -10,6 +10,15 @@
 	    return $q->result();
 	}
 	
+	function search_name($name){
+            $this->db->select('*');
+            $this->db->from('kontak');
+            $this->db->like('nama',$name);
+            $q = $this->db->get();
+            return $q->result();
+	
+	}
+	
 	function save(){
 	    $data = array(
 		'nama' => $this->nama,

@@ -14,6 +14,21 @@ class Kontak extends CI_Controller {
 		$this->load->view('kontak/kontak');
 	}
 	
+	public function search()
+	{
+                $name = $this->input->get('term');
+                $item = $this->kontaks->search_name($name);
+                echo "[";
+                foreach($item as $row){
+                    $id = $row->nama;
+                    $value = $row->no_telp;
+                    $kontak = $row->id_kontak;
+                    echo "{ \"id\" : \"$value\" , \"value\" : \"$id\" , \"kontak\" : \"$kontak\"},";
+                }
+                echo "{\"\":\"\"}]";
+	
+	}
+	
 	public function add()
 	{
 		$this->load->view('kontak/add');

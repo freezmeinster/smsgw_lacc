@@ -7,14 +7,26 @@ class Sms_template extends CI_Model {
 	function __construct(){
 	    parent::__construct();
 	}
+
+        function all(){
+            $this->db->select('*');
+            $this->db->from('sms_template');
+            $this->db->join('kriteria','kriteria.id_kriteria = sms_template.id_kriteria');
+            $this->db->where('kriteria.status',1);
+            $q = $this->db->get();
+            return $q->result();
+        }
 	
-	function all(){
+	function get($id){
 	    $this->db->select('*');
 	    $this->db->from('sms_template');
 	    $this->db->join('kriteria','kriteria.id_kriteria = sms_template.id_kriteria');
-	    $this->db->where('kriteria.status',1);
+	    $this->db->where("id_template=$id");
 	    $q = $this->db->get();
-	    return $q->result();
+	    $data =  $q->result();
+            $this->id_kriteria = $data[0]->id_kriteria;
+            $this->pesan = $data[0]->pesan;
+            return $this;
 	}
 	
 	function save(){

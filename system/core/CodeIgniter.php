@@ -378,5 +378,31 @@
 	}
 
 
+function strsplt($thetext,$num)
+{
+        if (!$num)
+        {  
+                $num=1;
+        }
+
+        $arr=array();
+        $x=floor(strlen($thetext)/$num);
+       
+        $i = 0;
+        $j = 0;
+        while ($i<=$x)
+        {
+                $y=substr($thetext,$j,$num);
+                if ($y)
+                {
+                        array_push($arr,$y);
+                }
+                $i++;
+                $j=$j+$num;
+        }
+        return $arr;
+} 
+
+
 /* End of file CodeIgniter.php */
 /* Location: ./system/core/CodeIgniter.php */

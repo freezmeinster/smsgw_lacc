@@ -17,8 +17,14 @@
     
     
     $lang['sms_template_nav'] = "Template Sms";
+    $lang['sms_template_add'] = "Tambah Template";
     $lang['sms_inbox'] = "Kotak Masuk";
     $lang['sms_outbox'] = "Kotak Keluar";
+    $lang['sms_group'] = "Sms Massal";
+    $lang['sms_receiver'] = "Nama Penerima";
+    $lang['sms_new'] = "Buat Sms";
+    $lang['sms_notif'] = "Sms Terbaru";
+    $lang['sms_notif_click'] = "Klik untuk melihat Sms terbaru";
     
     $lang['group_list'] = "Daftar Grup";
     $lang['group_add'] = "Tambah Grup";
