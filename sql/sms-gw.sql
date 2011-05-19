@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 18, 2011 at 01:50 AM
+-- Generation Time: May 18, 2011 at 09:01 PM
 -- Server version: 5.1.56
 -- PHP Version: 5.3.6
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `kontak` (
   `no_telp` varchar(16) NOT NULL,
   `alamat` text NOT NULL,
   PRIMARY KEY (`id_kontak`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `kontak`
@@ -82,7 +82,8 @@ INSERT INTO `kontak` (`id_kontak`, `nama`, `no_telp`, `alamat`) VALUES
 (4, 'Nguk', '16401635465', ''),
 (5, 'bram tina', '5415463514654', 'asdfasdfasdasdf'),
 (6, 'tina bram', '23412341', 'asdfasdfasdf'),
-(7, 'Dicky', '087822159280', 'Bandung');
+(7, 'Dicky', '087822159280', 'Bandung'),
+(8, 'Maya Dewi Mustika', '08997773073', 'Tasik');
 
 -- --------------------------------------------------------
 
@@ -152,21 +153,32 @@ CREATE TABLE IF NOT EXISTS `sms_inbox` (
 
 CREATE TABLE IF NOT EXISTS `sms_outbox` (
   `id_sms` int(11) NOT NULL AUTO_INCREMENT,
-  `id_kontak` int(11) NOT NULL,
+  `id_kontak` int(11) DEFAULT NULL,
+  `no_kontak` text,
   `isi_sms` text NOT NULL,
   `id_kriteria` int(11) NOT NULL,
   `waktu_masuk` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_sms`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `sms_outbox`
 --
 
-INSERT INTO `sms_outbox` (`id_sms`, `id_kontak`, `isi_sms`, `id_kriteria`, `waktu_masuk`) VALUES
-(5, 1, 'Bangun', 1, '2011-05-17 23:41:31'),
-(3, 7, 'Hai aihai', 5, '2011-05-17 18:52:53'),
-(4, 1, 'guck fucvkasdfasdfasdfasdfasdfasdfasdfasd', 1, '2011-05-17 18:53:50');
+INSERT INTO `sms_outbox` (`id_sms`, `id_kontak`, `no_kontak`, `isi_sms`, `id_kriteria`, `waktu_masuk`) VALUES
+(5, 1, NULL, 'Bangun', 1, '2011-05-17 23:41:31'),
+(6, 7, NULL, '', 1, '2011-05-18 17:56:50'),
+(7, 7, NULL, 'gffffjjjjjhgfjhgfjgh', 1, '2011-05-18 17:57:10'),
+(3, 7, NULL, 'Hai aihai', 5, '2011-05-17 18:52:53'),
+(4, 1, NULL, 'guck fucvkasdfasdfasdfasdfasdfasdfasdfasd', 1, '2011-05-17 18:53:50'),
+(8, 1, NULL, 'sdfgsdfgsdfg', 2, '2011-05-18 17:57:28'),
+(9, 1, NULL, 'hallo<br>', 2, '2011-05-18 17:59:27'),
+(10, 7, NULL, 'Fuck diki', 5, '2011-05-18 18:03:26'),
+(11, 1, NULL, '&nbsp;nguk nguk nguk', 1, '2011-05-18 18:03:55'),
+(12, 1, '085279916229', 'ajsdfnajklsdnflkjasdnfkj', 5, '2011-05-18 18:23:51'),
+(13, 0, '085721176190', 'sdfasd', 5, '2011-05-18 18:25:21'),
+(14, 1, '085279916229', 'dftydtydrtyrty', 2, '2011-05-18 18:56:57'),
+(15, 8, '08997773073', 'Maaf', 1, '2011-05-18 20:57:23');
 
 -- --------------------------------------------------------
 

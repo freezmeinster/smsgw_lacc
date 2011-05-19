@@ -1,12 +1,13 @@
 <?php
 class Gammu extends CI_Model {
 
-    function sms_to_db($jenis,$pesan,$id_kriteria,$id_kontak)
+    function sms_to_db($jenis,$pesan,$no_kontak,$id_kriteria,$id_kontak=NULL)
     {
         if ($jenis == 'outbox')
         {
             $data = array(
                 'id_kontak' => $id_kontak,
+                'no_kontak' => $no_kontak,
                 'isi_sms' => $pesan,
                 'id_kriteria' => $id_kriteria
             );
@@ -28,13 +29,13 @@ class Gammu extends CI_Model {
              foreach($array_of_message as $one_mess)
              {
                  send_message($number,$one_mess);
-                 $this->gammu->sms_to_db('outbox',$one_mess,$id_kriteria,$id_kontak);
+                 $this->gammu->sms_to_db('outbox',$one_mess,$number,$id_kriteria,$id_kontak);
              }
          } 
          else
          { 
              send_message($number,$message);
-             $this->gammu->sms_to_db('outbox',$message,$id_kriteria,$id_kontak);
+             $this->gammu->sms_to_db('outbox',$message,$number,$id_kriteria,$id_kontak);
          }
 
     }

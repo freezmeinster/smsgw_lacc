@@ -30,7 +30,7 @@
 				    $delete_url = site_url("sms/template_delete/$id");
 				    
 				    if (bcmod($i,'2') == 1){
-					$r = 'class="alternate-row"';
+					$r = 'class="alt"';
 				    }else $r = '';
 				    
 				    echo "<tr $r>\n";

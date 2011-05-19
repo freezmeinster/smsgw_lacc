@@ -2,12 +2,14 @@
 <div id="rightside">
 <div class="contentcontainer">
     <div class="headings altheading">
-	<h2><?php get_line('sms_template_label');?></h2>
+	<h2><?php get_line('sms_outbox_list');?></h2>
     </div>
     <div class="contentbox">
 	<table width="100%">
 	    <thead>
 		<tr>
+                    <th><?php get_line('sms_receiver');?></th>
+                    <th><?php get_line('sms_phone');?></th>
 		    <th><?php get_line('sms_content');?></th>
 		    <th><?php get_line('sms_criteria');?></th>
 		    <th>Opsi</th>
@@ -15,25 +17,28 @@
 	    </thead>
 	    <tbody>
 				<?php
-				    $q = $this->sms_template->all();
+				    $q = $this->sms_outbox->all();
 				    $i = 1;
 				    $edit_label = get_line_item('edit');
 				    $delete_label = get_line_item('delete');
 				    $base = base_url();
 				    
 				    foreach($q as $row ){
-				    $id_template = $row->id_template;
+				    $id_sms = $row->id_sms;
 				    $kriteria = $row->nama_kriteria;
-				    $id = $row->id_template;
-				    $pesan = $row->pesan;
-				    $edit_url = site_url("sms/template_edit/$id");
-				    $delete_url = site_url("sms/template_delete/$id");
+				    $nama_penerima = $row->nama;
+				    $no_telp = $row->no_telp;
+				    $pesan = $row->isi_sms;
+				    $edit_url = site_url("sms/template_edit/$id_sms");
+				    $delete_url = site_url("sms/template_delete/$id_sms");
 				    
 				    if (bcmod($i,'2') == 1){
-					$r = 'class="alternate-row"';
+					$r = 'class="alt"';
 				    }else $r = '';
 				    
 				    echo "<tr $r>\n";
+				    echo "<td><a href=\"\">$nama_penerima</a></td>\n";
+                                    echo "<td>$no_telp</td>\n";
 				    echo "<td>$pesan</td>\n";
 				    echo "<td>$kriteria</td>\n";
 				    echo "<td class='option-width'>\n";
