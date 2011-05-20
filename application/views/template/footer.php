@@ -33,14 +33,14 @@
             </li>
 
                <li>
-        	<a class="<?php if ($this->uri->segment(1) == 'sms'){ echo "expanded"; }else echo "collapsed";?> heading"><?php get_line('sms_template_nav');?></a>
+        	<a class="expanded heading"><?php get_line('sms_template_nav');?></a>
                 <ul class="navigation">
                     <li><a href="<?php echo site_url('sms/template');?>" title=""><?php get_line('sms_template_nav');?></a></li>
 		    <li><a href="<?php echo site_url('sms/template_add');?>" title=""><?php get_line('sms_template_add');?></a></li>
                 </ul>
             </li>
         	<li>
-                <a class="<?php if ($this->uri->segment(1) == 'kontak'){ echo "expanded"; }else echo "collapsed";?> heading"><?php get_line('contact_main_nav');?></a>
+                <a class="expanded heading"><?php get_line('contact_main_nav');?></a>
                 <ul class="navigation">
                     
                     <li><a href="<?php echo site_url('kontak');?>" title=""><?php get_line('contact_list');?></a></li>
@@ -48,14 +48,14 @@
                 </ul>
             </li>
             <li>
-                 <a class="<?php if ($this->uri->segment(1) == 'group'){ echo "expanded"; }else echo "collapsed";?> heading"><?php get_line('group_main_nav');?></a>
+                 <a class="expanded heading"><?php get_line('group_main_nav');?></a>
                  <ul class="navigation">
                     <li><a href="<?php echo site_url('group');?>" title=""><?php get_line('group_list');?></a></li>
                     <li><a href="<?php echo site_url('group/add');?>" title=""><?php get_line('group_add');?></a></li>
                 </ul>
             </li>
             <li>
-                 <a class="<?php if ($this->uri->segment(1) == 'kriteria'){ echo "expanded"; }else echo "collapsed";?> heading"><?php get_line('criteria_main_nav');?></a>
+                 <a class="expanded heading"><?php get_line('criteria_main_nav');?></a>
                  <ul class="navigation">
                     <li><a href="<?php echo site_url('kriteria');?>" title=""><?php get_line('criteria_list');?></a></li>
                     <li><a href="<?php echo site_url('kriteria/add');?>" title=""><?php get_line('criteria_add');?></a></li>

@@ -1,8 +1,11 @@
 <?php
-class Sms_template extends CI_Model {
+class Sms_inbox extends CI_Model {
+	var $id_sms = '';
+	var $status_baca = '';
+	var $no_kontak = '';
+	var $isi_sms = '';
 	var $id_kriteria = '';
-	var $pesan = '';
-	var $tgl_buat = '';
+	var $waktu_masuk = '';
 	
 	function __construct(){
 	    parent::__construct();
@@ -10,9 +13,8 @@ class Sms_template extends CI_Model {
 
         function all(){
             $this->db->select('*');
-            $this->db->from('sms_template');
-            $this->db->join('kriteria','kriteria.id_kriteria = sms_template.id_kriteria');
-            $this->db->where('kriteria.status',1);
+            $this->db->from('sms_inbox');
+            //$this->db->join('kriteria','kriteria.id_kriteria = sms_inbox.id_kriteria');
             $q = $this->db->get();
             return $q->result();
         }

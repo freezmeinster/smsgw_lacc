@@ -29,6 +29,21 @@ class Kontak extends CI_Controller {
 	
 	}
 	
+	public function edit($id_kontak)
+	{
+                $kontak = $this->kontaks->get($id_kontak);
+                $data['id_kontak'] = $id_kontak;
+                $data['nama'] = $kontak->nama ;
+                $data['no_telp'] = $kontak->no_telp ;
+                $data['alamat'] = $kontak->alamat;
+                $this->load->view('kontak/edit',$data);
+	}
+	
+	public function delete()
+	{
+	
+	}
+	
 	public function add()
 	{
 		$this->load->view('kontak/add');
@@ -44,6 +59,11 @@ class Kontak extends CI_Controller {
 		$k->alamat = $this->input->post('alamat');
 		$k->save();
 		redirect('kontak');
+	}
+	
+	public function kontak_update()
+	{
+	
 	}
 	/*POST URL Stop*/
 	

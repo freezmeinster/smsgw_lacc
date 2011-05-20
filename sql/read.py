@@ -1,22 +1,32 @@
 import os
-#sms = open('sms.txt','r').read()
-sms = os.popen('gammu --getallsms').read()
-h = sms.split('\n\n')
-s_pesan = []
+import _mysql
 
-total_sms = range(1,h.__len__(),2).__len__() - 1
+db_user_name = 'root';
+db_password = '';
+db_name = 'sms-gw';
 
-print "total sms adalah "
-print total_sms
+db = _mysql.connect(user=db_user_name,passwd=db_password,db=db_name)
 
-for a in range(0,total_sms*2,2):
-    head = h[a].split('\n')
-    telp = head[5].split(':')
-    no_telp = telp[1].replace("\"",'').replace('+62','0').strip()
-    pesan = h[a+1].strip()
-    
-    s_pesan.append({'pengirim': no_telp , 'pesan': pesan})
-    
+while True :
+    sms = os.popen('gammu --getallsms').read()
+    h = sms.split('\n\n')
+    s_pesan = []
 
-print s_pesan
-    
+    total_sms = range(1,h.__len__(),2).__len__() - 1
+
+    print "total sms adalah "
+    print total_sms
+
+    if total_sms != 0 :
+        for a in range(0,total_sms*2,2):
+            head = h[a].split('\n')
+            telp = head[5].split(':')
+            no_telp = telp[1].replace("\"",'').replace('+62','0').strip()
+            pesan = h[a+1].strip()
+            
+            db.query("insert into sms_inbox(no_kontak,isi_sms) values(\""+no_telp+"\",\""+pesan+"\")")
+
+        os.popen('gammu --deleteallsms 1')
+    else :
+        pass
+        

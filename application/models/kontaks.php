@@ -19,6 +19,18 @@
 	
 	}
 	
+	function get($id_kontak)
+	{
+            $q = $this->db->get_where('kontak',array('id_kontak' => $id_kontak));
+            $data = $q->result();
+            $this->id_kontak = $data[0]->id_kontak;
+            $this->nama = $data[0]->nama;
+            $this->alamat = $data[0]->alamat;
+            $this->no_telp = $data[0]->no_telp;
+            return $this;
+	
+	}
+	
 	function save(){
 	    $data = array(
 		'nama' => $this->nama,

@@ -20,7 +20,7 @@ class Sms extends CI_Controller {
 
         public function inbox()
         {
-                $this->load->view("sms/outbox");
+                $this->load->view("sms/inbox");
         }
 
         public function new_sms()

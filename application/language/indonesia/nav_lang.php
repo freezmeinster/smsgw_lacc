@@ -14,6 +14,7 @@
     
     $lang['contact_list'] = 'Daftar Kontak';
     $lang['contact_add'] = 'Tambah Kontak';
+    $lang['contact_edit'] = 'Ubah Data Kontak';
     
     
     $lang['sms_template_nav'] = "Template Sms";

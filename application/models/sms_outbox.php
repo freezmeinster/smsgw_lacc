@@ -17,6 +17,7 @@ class Sms_outbox extends CI_Model {
             $this->db->join('kriteria','kriteria.id_kriteria = sms_outbox.id_kriteria');
             $this->db->join('kontak','kontak.id_kontak = sms_outbox.id_kontak');
             $this->db->where('kriteria.status',1);
+            $this->db->order_by('waktu_masuk','desc');
             $q = $this->db->get();
             return $q->result();
         }
