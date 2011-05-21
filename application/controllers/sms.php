@@ -22,6 +22,31 @@ class Sms extends CI_Controller {
         {
                 $this->load->view("sms/inbox");
         }
+        
+        public function inbox_read_one($id)
+        {
+                $data = array(
+                    'status_baca' => 1,
+                );
+                
+                $this->db->where("id_sms = $id");
+                $this->db->update('sms_inbox',$data);
+                redirect('sms/inbox');        
+        }
+        
+        public function inbox_ajax()
+        {
+               $this->load->view('template/ajax_inbox');
+        }
+        
+        public function inbox_read($id_sms)
+        {
+                $q = $this->sms_inbox->get($id_sms);
+                $data['no_kontak'] = $q->no_kontak;
+                $data['isi_sms'] = $q->isi_sms;
+                $data['waktu_masuk'] = $q->waktu_masuk;
+                $this->load->view('template/ajax_inbox_read',$data);
+        }
 
         public function new_sms()
         {
@@ -63,7 +88,7 @@ class Sms extends CI_Controller {
             $pesan = $this->input->post('pesan');
             $id_kontak = $this->input->post('id_kontak');
             $id_kriteria = $this->input->post('id_kriteria');
-            $this->gammu->send_one_sms($id_kontak,$no_telp,$pesan,$id_kriteria);
+            echo $this->gammu->send_one_sms($id_kontak,$no_telp,$pesan,$id_kriteria);
             redirect('sms/new_sms');
         }
 	/*POST URL Stop*/

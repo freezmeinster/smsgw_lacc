@@ -29,8 +29,8 @@
 					$alamat = $row->alamat;
 					$edit_url = site_url("kontak/edit/$id");
 					$delete_url = site_url("kontak/delete/$id");
-					if (bcmod($i,'2') == 1){
-					    $r = 'alt"';
+					if (bcmod($i,'2') == 0){
+					    $r = 'class="alt"';
 					}else $r = '';
 					
 					echo "<tr $r>\n";

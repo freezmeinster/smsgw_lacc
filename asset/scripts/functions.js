@@ -60,3 +60,41 @@ $(document).ready(function(){
 	$(document).ready(function() {
 			$('#wysiwyg').wysiwyg();
 		});
+        
+        $(document).ready(function()
+          {
+   // Match all <A/> links with a title tag and use it as the content (default).
+   $('a[rel]').each(function(){
+   
+  $(this).qtip(
+      {
+         content: {
+            // Set the text to an image HTML string with the correct src URL to the loading image you want to use
+            text: 'Pesan Singkat',
+            ajax: {
+               url: $(this).attr('rel') // Use the rel attribute of each element for the url to load
+            },
+             title: {
+               text: 'Detail Sms ',
+               button: true
+            }
+         },
+         position: {
+            at: 'center', // Position the tooltip above the link
+            my: 'center',
+            target : $(window) // Keep the tooltip on-screen at all times
+         },
+         show: {
+            event: 'click',
+            solo: true, // Only show one tooltip at a time
+            modal: true
+         },
+         hide: 'unfocus',
+         style: {
+            classes: 'ui-tooltip-light ui-tooltip-rounded'
+         }
+      })
+      }).click(function(event) { event.preventDefault(); });
+   });
+        
+        

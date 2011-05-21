@@ -27,8 +27,8 @@
 					$ket = $row->keterangan;
 					$edit_url = site_url("group/edit/$id");
 					$delete_url = site_url("group/delete/$id");
-					if (bcmod($i,'2') == 1){
-					    $r = 'class="alternate-row"';
+					if (bcmod($i,'2') == 0){
+					    $r = 'class="alt"';
 					}else $r = '';
 					
 					echo "<tr $r>\n";

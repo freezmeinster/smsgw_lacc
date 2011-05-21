@@ -29,7 +29,7 @@
 				    $edit_url = site_url("sms/template_edit/$id");
 				    $delete_url = site_url("sms/template_delete/$id");
 				    
-				    if (bcmod($i,'2') == 1){
+				    if (bcmod($i,'2') == 0){
 					$r = 'class="alt"';
 				    }else $r = '';
 				    

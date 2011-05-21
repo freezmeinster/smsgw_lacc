@@ -10,6 +10,14 @@ class Sms_inbox extends CI_Model {
 	function __construct(){
 	    parent::__construct();
 	}
+	
+	function get_count()
+	{
+            $this->db->select('*');
+            $this->db->from('sms_inbox');
+            $this->db->where('status_baca = 0');
+            return $this->db->count_all_results();
+	}
 
         function all(){
             $this->db->select('*');
@@ -21,13 +29,14 @@ class Sms_inbox extends CI_Model {
 	
 	function get($id){
 	    $this->db->select('*');
-	    $this->db->from('sms_template');
-	    $this->db->join('kriteria','kriteria.id_kriteria = sms_template.id_kriteria');
-	    $this->db->where("id_template=$id");
+	    $this->db->from('sms_inbox');
+	    //$this->db->join('kriteria','kriteria.id_kriteria = sms_template.id_kriteria');
+	    $this->db->where("id_sms = $id");
 	    $q = $this->db->get();
 	    $data =  $q->result();
-            $this->id_kriteria = $data[0]->id_kriteria;
-            $this->pesan = $data[0]->pesan;
+            $this->no_kontak = $data[0]->no_kontak;
+            $this->isi_sms = $data[0]->isi_sms;
+            $this->waktu_masuk = $data[0]->waktu_masuk;
             return $this;
 	}
 	

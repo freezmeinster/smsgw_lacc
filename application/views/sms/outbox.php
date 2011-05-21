@@ -32,7 +32,7 @@
 				    $edit_url = site_url("sms/template_edit/$id_sms");
 				    $delete_url = site_url("sms/template_delete/$id_sms");
 				    
-				    if (bcmod($i,'2') == 1){
+				    if (bcmod($i,'2') == 0){
 					$r = 'class="alt"';
 				    }else $r = '';
 				    
@@ -51,15 +51,7 @@
 				?>
  </tbody>
 	</table>
-                <ul class="pagination">
-                	<li class="text">Previous</li>
-                    <li class="page"><a href="#" title="">1</a></li>
-                    <li><a href="#" title="">2</a></li>
-                    <li><a href="#" title="">3</a></li>
-                    <li><a href="#" title="">4</a></li>
 
-                    <li class="text"><a href="#" title="">Next</a></li>
-                </ul>
                 <div style="clear: both;"></div>
          </div>
     </div>

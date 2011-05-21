@@ -10,12 +10,17 @@ class Core extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login');
+		redirect('sms/inbox');
 	}
 	
 	public function dashboard()
 	{
 		$this->load->view('core/dashboard');
+	}
+	
+	public function get_notif_count()
+	{
+                echo $this->sms_inbox->get_count();
 	}
 
 }

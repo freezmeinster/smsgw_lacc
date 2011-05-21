@@ -27,6 +27,13 @@ while True :
             db.query("insert into sms_inbox(no_kontak,isi_sms) values(\""+no_telp+"\",\""+pesan+"\")")
 
         os.popen('gammu --deleteallsms 1')
+  
     else :
         pass
+    
+    db.query("select * from sms_outbox where status_kirim = 0 ")
+    row = db.store_result()
+    for sms in row.fetch_row(maxrows=0) :
+        os.popen("gammu sendsms TEXT "+sms[2]+" -text \""+sms[3]+"\"")
+        db.query("update sms_outbox SET status_kirim = 1  where sms_outbox.id_sms = "+sms[0]+"")
         

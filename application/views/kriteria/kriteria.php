@@ -28,8 +28,8 @@
 					$s = $row->status;
 					$edit_url = site_url("kriteria/edit/$id");
 					$delete_url = site_url("kriteria/delete/$id");
-					if (bcmod($i,'2') == 1){
-					    $r = 'class="alternate-row"';
+					if (bcmod($i,'2') == 0){
+					    $r = 'class="alt"';
 					}else $r = '';
 					
 					if ($s == 1 ){
