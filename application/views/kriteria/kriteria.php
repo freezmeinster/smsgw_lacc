@@ -51,15 +51,6 @@
 				    </tbody>
 	</table>
 
-                <ul class="pagination">
-                	<li class="text">Previous</li>
-                    <li class="page"><a href="#" title="">1</a></li>
-                    <li><a href="#" title="">2</a></li>
-                    <li><a href="#" title="">3</a></li>
-                    <li><a href="#" title="">4</a></li>
-
-                    <li class="text"><a href="#" title="">Next</a></li>
-                </ul>
                 <div style="clear: both;"></div>
          </div>
     </div>

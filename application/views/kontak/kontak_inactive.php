@@ -2,40 +2,46 @@
 <div id="rightside">
 <div class="contentcontainer">
     <div class="headings altheading">
-	<h2><?php get_line('group_list');?></h2>
+	<h2><?php get_line('contact_list');?></h2>
     </div>
     <div class="contentbox">
 	<table width="100%">
 	    <thead>
 		<tr>
-		    <th><?php get_line('group_name');?></th>
-		    <th><?php get_line('group_desc');?></th>
+		    <th>Nama</th>
+		    <th>Telp</th>
+		    <th>Alamat</th>
 		    <th>Opsi</th>
 		</tr>
 	    </thead>
 	    <tbody>
 				<?php
-				    $kriteria = $this->groups->all();
+				    $kriteria = $this->kontaks->all($active=0);
 				    $i = 1;
 				    $edit_label = get_line_item('edit');
 				    $delete_label = get_line_item('delete');
+				    $activated_label = get_line_item('activated');
 				    $base = base_url();
 				   
 				    foreach($kriteria as $row ){
-					$nama = $row->nama_group;
-					$id = $row->id_group;
-					$ket = $row->keterangan;
-					$edit_url = site_url("group/edit/$id");
-					$delete_url = site_url("group/delete/$id");
+					$nama = $row->nama;
+					$id = $row->id_kontak;
+					$tlp = $row->no_telp;
+					$alamat = $row->alamat;
+					$edit_url = site_url("kontak/edit/$id");
+					$delete_url = site_url("kontak/delete/$id");
+					$activated_url = site_url("kontak/activated/$id");
 					if (bcmod($i,'2') == 0){
 					    $r = 'class="alt"';
 					}else $r = '';
 					
 					echo "<tr $r>\n";
 					echo "<td>$nama</td>\n";
-					echo "<td>$ket</td>\n";
-					echo "<td>\n";
+					echo "<td>$tlp</td>\n";
+					echo "<td>$alamat</td>\n";
+					echo "<td >\n";
 					echo "<a href='$edit_url' title=\"$edit_label\" ><img alt=\"Edit\" src=\"$base/asset/img/icons/icon_edit.png\"></a>\n";
+					echo "<a href='$activated_url' title=\"$activated_label\"><img alt=\"Delete\" src=\"$base/asset/img/icons/icon_approve.png\"></a>\n";
 					echo "<a href='$delete_url' title=\"$delete_label\"><img alt=\"Delete\" src=\"$base/asset/img/icons/icon_delete.png\"></a>\n";
 					echo "</td>\n";
 					echo "</tr>\n";

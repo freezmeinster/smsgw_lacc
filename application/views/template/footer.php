@@ -16,13 +16,7 @@
     </script>
         <!-- Left Dark Bar Start -->
     <div id="leftside">
-    	<div class="user">
-        	<img SRC="<?php echo base_url();?>/asset/img/avatar.png" width="44" height="44" class="hoverimg" alt="Avatar" />
-            <p>Logged in as:</p>
-            <p class="username">Bersyukur</p>
-            <p class="userbtn"><a href="#" title="">Profile</a></p>
-            <p class="userbtn"><a href="#" title="">Log out</a></p>
-        </div>
+  
         <div class="notifications">
         	<p class="notifycount"><a href="<?php echo site_url('sms/inbox');?>" title="" class="notifypop" id="notif"></a></p>
             <p><a href="<?php echo site_url('sms/inbox');?>" title="" ><?php get_line('sms_notif');?></a></p>
@@ -51,6 +45,7 @@
                 <ul class="navigation">
                     
                     <li><a href="<?php echo site_url('kontak');?>" title=""><?php get_line('contact_list');?></a></li>
+                    <li><a href="<?php echo site_url('kontak/inactive');?>" title=""><?php get_line('contact_inactive_list');?></a></li>
                     <li><a href="<?php echo site_url('kontak/add');?>" title=""><?php get_line('contact_add');?></a></li>
                 </ul>
             </li>

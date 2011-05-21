@@ -14,6 +14,11 @@ class Kontak extends CI_Controller {
 		$this->load->view('kontak/kontak');
 	}
 	
+	public function inactive()
+        {
+                $this->load->view('kontak/kontak_inactive');
+        }
+	
 	public function search()
 	{
                 $name = $this->input->get('term');
@@ -39,14 +44,28 @@ class Kontak extends CI_Controller {
                 $this->load->view('kontak/edit',$data);
 	}
 	
-	public function delete()
+	public function delete($id_kontak)
 	{
-	
+                $this->kontaks->delete($id_kontak);
+                redirect('kontak');
 	}
+	
+	public function activated($id_kontak)
+        {
+                $this->kontaks->active($id_kontak);
+                redirect('kontak');
+        }
+	
+	public function inactivated($id_kontak)
+        {
+                $this->kontaks->inactive($id_kontak);
+                redirect('kontak');
+        }
 	
 	public function add()
 	{
 		$this->load->view('kontak/add');
+		redirect('kontak');
 	}
 	/*Get URL stop*/
 	
@@ -61,9 +80,15 @@ class Kontak extends CI_Controller {
 		redirect('kontak');
 	}
 	
-	public function kontak_update()
+	public function kontak_update($id_kontak)
 	{
-	
+                $k = New Kontaks;
+                $k->id_kontak = $id_kontak;
+                $k->nama = $this->input->post('nama');
+                $k->no_telp = $this->input->post('no_telp');
+                $k->alamat = $this->input->post('alamat');
+                $k->update();
+                redirect('kontak');
 	}
 	/*POST URL Stop*/
 	

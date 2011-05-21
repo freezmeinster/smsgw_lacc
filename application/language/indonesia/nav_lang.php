@@ -13,6 +13,7 @@
     $lang['core_criteria_record_nav'] = "Catatan Kriteria";
     
     $lang['contact_list'] = 'Daftar Kontak';
+    $lang['contact_inactive_list'] = 'Kontak tidak aktif';
     $lang['contact_add'] = 'Tambah Kontak';
     $lang['contact_edit'] = 'Ubah Data Kontak';
     

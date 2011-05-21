@@ -2,7 +2,7 @@
 <div id="rightside">
 <div class="contentcontainer">
     <div class="headings altheading">
-	<h2><?php get_line('sms_template_label');?></h2>
+	<h2><?php get_line('sms_inbox_list');?></h2>
     </div>
     <script>
          $(document).ready(function() {

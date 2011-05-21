@@ -24,7 +24,13 @@ while True :
             no_telp = telp[1].replace("\"",'').replace('+62','0').strip()
             pesan = h[a+1].strip()
             
-            db.query("insert into sms_inbox(no_kontak,isi_sms) values(\""+no_telp+"\",\""+pesan+"\")")
+            db.query("select * from kontak where no_telp = '"+no_telp+"'")
+            r = db.store_result()
+            id_kontak = r.fetch_row(maxrows=0)
+            if id_kontak.__len__() > 0:
+                db.query("insert into sms_inbox(no_kontak,isi_sms,id_kontak) values(\""+no_telp+"\",\""+pesan+"\","+id_kontak[0][0]+")")
+            else :    
+                db.query("insert into sms_inbox(no_kontak,isi_sms) values(\""+no_telp+"\",\""+pesan+"\")")
 
         os.popen('gammu --deleteallsms 1')
   
