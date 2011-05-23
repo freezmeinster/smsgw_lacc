@@ -21,16 +21,18 @@
                                     $no_kontak = $row->no_kontak;
                                     $isi_sms = $row->isi_sms;
                                     $status = $row->status_baca;
-                                    $reply_url = site_url("sms/template_edit/$id_sms");
-                                    $delete_url = site_url("sms/template_delete/$id_sms");
-                                    $read_url = site_url("sms/inbox_read_one/$id_sms");
+                                    $history_url = site_url("kontak/history/$id_kontak");
+                                    $reply_url = site_url("sms/reply/$id_sms");
+                                    
+                                    $delete_url = site_url("sms/inbox_delete/$id_sms");
+                                    $read_url = site_url("sms/inbox_read_criteria/$id_sms");
                                     $click_message = site_url("sms/inbox_read/$id_sms");
                                     
-                                    if ($id_kontak == ''){
-                                        $kontak = $no_kontak;
-                                    }else {
+                                    if ($id_kontak != ''){
                                         $k = $this->kontaks->get($id_kontak);
-                                        $kontak = $k->nama;
+                                        $kontak = "<a href=\"$history_url\">$k->nama</a>";
+                                    }else {
+                                        $kontak = $no_kontak;
                                     }
                                     
                                     if ($status == 0 ){

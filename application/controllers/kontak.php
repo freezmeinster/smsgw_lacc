@@ -19,18 +19,31 @@ class Kontak extends CI_Controller {
                 $this->load->view('kontak/kontak_inactive');
         }
 	
-	public function search()
+	public function search($jenis='nama')
 	{
-                $name = $this->input->get('term');
-                $item = $this->kontaks->search_name($name);
-                echo "[";
-                foreach($item as $row){
-                    $id = $row->nama;
-                    $value = $row->no_telp;
-                    $kontak = $row->id_kontak;
-                    echo "{ \"id\" : \"$value\" , \"value\" : \"$id\" , \"kontak\" : \"$kontak\"},";
+                if( $jenis == 'nama'){
+                    $name = $this->input->get('term');
+                    $item = $this->kontaks->search_name($name);
+                    echo "[";
+                    foreach($item as $row){
+                        $id = $row->nama;
+                        $value = $row->no_telp;
+                        $kontak = $row->id_kontak;
+                        echo "{ \"id\" : \"$value\" , \"value\" : \"$id\" , \"kontak\" : \"$kontak\"},";
                 }
                 echo "{\"\":\"\"}]";
+                }else if( $jenis == 'no'){
+                    $no = $this->input->get('term');
+                    $item = $this->kontaks->search_number($no);
+                    echo "[";
+                    foreach($item as $row){
+                        $id = $row->nama;
+                        $value = $row->no_telp;
+                        $kontak = $row->id_kontak;
+                        echo "{ \"id\" : \"$id\" , \"value\" : \"$value\" , \"kontak\" : \"$kontak\"},";
+                }
+                echo "{\"\":\"\"}]";
+                }
 	
 	}
 	
@@ -44,11 +57,6 @@ class Kontak extends CI_Controller {
                 $this->load->view('kontak/edit',$data);
 	}
 	
-	public function delete($id_kontak)
-	{
-                $this->kontaks->delete($id_kontak);
-                redirect('kontak');
-	}
 	
 	public function activated($id_kontak)
         {
@@ -65,7 +73,13 @@ class Kontak extends CI_Controller {
 	public function add()
 	{
 		$this->load->view('kontak/add');
-		redirect('kontak');
+	}
+	
+	public function history($id_kontak)
+	{
+           $data['id_kontak'] = $id_kontak;
+           $this->load->view('kontak/history',$data);
+            
 	}
 	/*Get URL stop*/
 	
@@ -90,6 +104,13 @@ class Kontak extends CI_Controller {
                 $k->update();
                 redirect('kontak');
 	}
+	public function note_add($id_kontak)
+	{       
+            $note = $this->input->post('note');
+            $this->kontaks->note_add($id_kontak,$note);
+            redirect("kontak/history/$id_kontak");
+	}
+	
 	/*POST URL Stop*/
 	
 }

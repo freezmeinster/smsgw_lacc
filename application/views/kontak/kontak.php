@@ -27,14 +27,15 @@
 					$id = $row->id_kontak;
 					$tlp = $row->no_telp;
 					$alamat = $row->alamat;
+					$history_url = site_url("kontak/history/$id");
 					$edit_url = site_url("kontak/edit/$id");
-					$delete_url = site_url("kontak/delete/$id");
+					$delete_url = site_url("kontak/inactivated/$id");
 					if (bcmod($i,'2') == 0){
 					    $r = 'class="alt"';
 					}else $r = '';
 					
 					echo "<tr $r>\n";
-					echo "<td>$nama</td>\n";
+					echo "<td><a href=\"$history_url\">$nama</a></td>\n";
 					echo "<td>$tlp</td>\n";
 					echo "<td>$alamat</td>\n";
 					echo "<td >\n";

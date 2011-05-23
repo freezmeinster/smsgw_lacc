@@ -4,4 +4,5 @@
     $lang['read'] = "Baca";
     $lang['send'] = 'Kirim';
     $lang['activated'] = 'Aktifkan';
+    $lang['save'] = "Simpan";
 ?>

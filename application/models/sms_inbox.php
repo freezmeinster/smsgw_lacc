@@ -23,6 +23,7 @@ class Sms_inbox extends CI_Model {
             $this->db->select('*');
             $this->db->from('sms_inbox');
             //$this->db->join('kriteria','kriteria.id_kriteria = sms_inbox.id_kriteria');
+            $this->db->where('status_aktif = 1');
             $q = $this->db->get();
             return $q->result();
         }
@@ -34,6 +35,9 @@ class Sms_inbox extends CI_Model {
 	    $this->db->where("id_sms = $id");
 	    $q = $this->db->get();
 	    $data =  $q->result();
+	    $this->id_kriteria = $data[0]->id_kriteria;
+	    $this->id_kontak = $data[0]->id_kontak;
+	    $this->id_sms = $data[0]->id_sms;
             $this->no_kontak = $data[0]->no_kontak;
             $this->isi_sms = $data[0]->isi_sms;
             $this->waktu_masuk = $data[0]->waktu_masuk;

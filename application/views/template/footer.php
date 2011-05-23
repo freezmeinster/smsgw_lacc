@@ -10,7 +10,7 @@
          $("#notif").load("<?php echo site_url('core/get_notif_count');?>");
          var refreshId = setInterval(function() {
          $("#notif").load("<?php echo site_url('core/get_notif_count');?>");
-         }, 7000);
+         }, 15000);
          $.ajaxSetup({ cache: false });
          });
     </script>
@@ -30,6 +30,7 @@
                      <li><a href="<?php echo site_url('sms/inbox');?>" title=""><?php get_line('sms_inbox');?></a></li>
                      <li><a href="<?php echo site_url('sms/outbox');?>" title=""><?php get_line('sms_outbox');?></a></li>
                      <li><a href="<?php echo site_url('sms/new_sms');?>" title=""><?php get_line('sms_new');?></a></li>
+                     <li><a href="<?php echo site_url('sms/new_group');?>" title=""><?php get_line('sms_group');?></a></li>
                 </ul>
             </li>
 

@@ -29,8 +29,8 @@
 				    $nama_penerima = $row->nama;
 				    $no_telp = $row->no_telp;
 				    $pesan = $row->isi_sms;
-				    $edit_url = site_url("sms/template_edit/$id_sms");
-				    $delete_url = site_url("sms/template_delete/$id_sms");
+				    $edit_url = site_url("sms/outbox_edit/$id_sms");
+				    $delete_url = site_url("sms/outbox_delete/$id_sms");
 				    
 				    if (bcmod($i,'2') == 0){
 					$r = 'class="alt"';

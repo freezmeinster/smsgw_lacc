@@ -403,6 +403,15 @@ function strsplt($thetext,$num)
         return $arr;
 } 
 
+function put_warning($message)
+{
+    $base = base_url();
+    echo "<div class=\"status warning\">\n";
+    echo "<p class=\"closestatus\"></p>\n";
+    echo "<p><img alt=\"Warning\" src=\"$base/asset/img/icons/icon_warning.png\"><span>Perhatian!</span> $message\n";
+    echo "</div>\n";
+}
+
 
 /* End of file CodeIgniter.php */
 /* Location: ./system/core/CodeIgniter.php */

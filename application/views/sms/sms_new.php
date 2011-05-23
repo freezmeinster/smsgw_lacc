@@ -16,12 +16,29 @@
                 function loging( message ) {
                         $("#kontak").val(message);
                 }
+                
+                function log1( message ) {
+                        $("#receiver").val(message);
+                }
+                
 
                 $( "#receiver" ).autocomplete({
                         source: "<?php echo site_url('kontak/search');?>",
                         minLength: 2,
                         select: function( event, ui ) {
                                 log( ui.item ?
+                                        ui.item.id :
+                                        "Nothing selected, input was " + this.value );
+                                loging( ui.item ?
+                                        ui.item.kontak :
+                                        "Nothing selected, input was " + this.value );
+                        }
+                });
+                $( "#no_2" ).autocomplete({
+                        source: "<?php echo site_url('kontak/search/no');?>",
+                        minLength: 2,
+                        select: function( event, ui ) {
+                                log1( ui.item ?
                                         ui.item.id :
                                         "Nothing selected, input was " + this.value );
                                 loging( ui.item ?
